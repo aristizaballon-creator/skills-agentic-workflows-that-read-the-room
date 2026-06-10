@@ -12,6 +12,8 @@ network: defaults
 safe-outputs:
   create-issue:
     max: 5
+  assign-to-agent:
+    model: copilot-default
 
 ---
 
