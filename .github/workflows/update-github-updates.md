@@ -6,7 +6,7 @@ trigger:
   - workflow_dispatch       # Manual trigger via GitHub UI
 
 agent:
-  model: gpt-4o
+  model: copilot-default
   safe_outputs: true        # Enable sandbox environment for secure file changes
   
 tools:
