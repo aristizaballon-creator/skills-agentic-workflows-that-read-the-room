@@ -7,7 +7,10 @@ permissions:
   issues: read
   pull-requests: read
 
-network: defaults
+network:
+  allowed:
+    - github.com
+    - github.blog
 
 safe-outputs:
   create-issue:
