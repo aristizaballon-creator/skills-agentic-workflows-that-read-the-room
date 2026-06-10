@@ -11,25 +11,39 @@ network:
   allowed:
     - github.com
     - github.blog
+    - raw.githubusercontent.com
 
 safe-outputs:
-  create-issue:
+  create-pull-request:
+    title-prefix: "[latest-github-updates] "
+    draft: true
+    max: 1
+    fallback-as-issue: false
+  missing-data:
+    create-issue: false
     max: 5
-
+  report-failure-as-issue: false
 ---
 
 # latest-github-updates
 
 ## Instructions
 
-1. Use the network fetch tool to read the latest context, features, and technical updates from the following external URLs:
-   - https://github.blog (GitHub Official Blog)
-   - https://github.com/changelog (GitHub Changelog)
-2. Synthesize and organize the gathered information logically by categories: Features, Security Updates, Improvements, and Breaking Changes.
-3. Update the local Markdown content file named `latest-github-updates.md` with this processed information.
-4. Use the secure `safe-outputs` tool configuration to propose these changes by automatically creating a structured Pull Request for review.
+1. Read the latest public GitHub updates from:
+   - https://github.blog
+   - https://github.com/changelog
+
+2. Synthesize the information into the following categories:
+   - Features
+   - Security Updates
+   - Improvements
+   - Breaking Changes
+
+3. Update the local Markdown content file named `latest-github-updates.md`.
+
+4. Propose the changes through a structured Pull Request using the `create-pull-request` safe-output.
 
 ## Notes
 
-- Run `gh aw compile` to generate the GitHub Actions workflow
-- See https://github.github.com/gh-aw/ for complete configuration options and tools documentation
+- Do not create issues for missing data or failure reports.
+- If required context is missing, report it in the workflow output only.
