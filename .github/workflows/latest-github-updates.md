@@ -26,23 +26,57 @@ safe-outputs:
 
 # latest-github-updates
 
+## Task Overview
+
+Your job is to fetch the latest GitHub updates and create a pull request with synthesized information.
+
 ## Instructions
 
-1. Read the latest public GitHub updates from:
-   - https://github.blog
-   - https://github.com/changelog
+### Step 1: Fetch Latest GitHub Updates
+Read the latest public GitHub updates from these sources:
+- https://github.blog (primary source for announcements)
+- https://github.com/changelog (detailed changelog)
 
-2. Synthesize the information into the following categories:
-   - Features
-   - Security Updates
-   - Improvements
-   - Breaking Changes
+Gather information about recent changes, features, and improvements.
 
-3. Update the local Markdown content file named `latest-github-updates.md`.
+### Step 2: Categorize the Information
+Organize the collected updates into these categories:
+- **Features**: New capabilities and major feature releases
+- **Security Updates**: Security fixes, vulnerability patches, and security improvements
+- **Improvements**: Performance enhancements, UI/UX improvements, and optimizations
+- **Breaking Changes**: Deprecations, API changes, or behavioral changes that may require action
 
-4. Propose the changes through a structured Pull Request using the `create-pull-request` safe-output.
+### Step 3: Update the Target File
+Read the existing file `latest-github-updates.md` in the repository root.
+
+Update each section (Features, Security Updates, Improvements, Breaking Changes) with the latest information you've gathered.
+
+Maintain the markdown structure and keep the content concise but informative.
+
+### Step 4: Create Pull Request (REQUIRED)
+**You MUST create a pull request with your changes.**
+
+Use the `create-pull-request` safe-output tool to:
+1. Create a branch with your updates
+2. Commit the changes to `latest-github-updates.md`
+3. Open a draft pull request with a clear title and description
+
+The PR title will be automatically prefixed with `[latest-github-updates]`.
+
+Provide a detailed body describing:
+- What updates were added
+- Which categories were updated
+- Date of the update fetch
+
+## Success Criteria
+
+✓ Successfully fetched latest GitHub updates
+✓ Organized information into the four categories
+✓ Updated `latest-github-updates.md` with new content
+✓ **Created and opened a pull request** (REQUIRED)
 
 ## Notes
 
-- Do not create issues for missing data or failure reports.
-- If required context is missing, report it in the workflow output only.
+- Do not create issues for missing data—report in workflow output only
+- Always attempt to create the pull request, even if some data is incomplete
+- If you encounter access restrictions, report them as missing_tool or missing_data
