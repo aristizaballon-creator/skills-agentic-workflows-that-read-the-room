@@ -20,7 +20,6 @@ safe-outputs:
     max: 1
     fallback-as-issue: false
   missing-data:
-    create-issue: false
     max: 5
   report-failure-as-issue: false
 ---
